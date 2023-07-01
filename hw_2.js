@@ -4,7 +4,7 @@
 let login = prompt ("Введіть логін");
 let parole = prompt ("Введіть свій пароль");
 
-if (login == "admin" & parole == 12345){
+if (login == "admin" & parole == "12345"){
     alert ("Вітаємо в системі");
 }
 else{
