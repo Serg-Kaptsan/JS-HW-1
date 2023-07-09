@@ -12,11 +12,10 @@ function filmMaker(title, year, rating) {
     this.title = title;
     this.year = year;
     this.rating = rating;
-
-    this.giveInfo = function() { 
-        return "Назва фільму:" + this.title + ", рік виходу:" + this.year + ", рейтинг:" + this.rating;
-    };
 }
+filmMaker.prototype.giveInfo = function() {
+    return "Назва фільму:" + this.title + ", рік виходу:" + this.year + ", рейтинг:" + this.rating;
+};
 
 // - Розмістіть 5 фільмів створених через конструктор в масив і створіть функцію sortPopular(arr), яка приймає арей і сортує об’єкти за популярністю.
 
