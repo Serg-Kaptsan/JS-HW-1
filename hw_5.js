@@ -8,11 +8,6 @@ function filmMaker(title, year, rating) {
 
 //- створити на прототипі filmMaker метод giveInfo яка виводить в консоль інформацію про фільм.
 
-function filmMaker(title, year, rating) {
-    this.title = title;
-    this.year = year;
-    this.rating = rating;
-}
 filmMaker.prototype.giveInfo = function() {
     return "Назва фільму:" + this.title + ", рік виходу:" + this.year + ", рейтинг:" + this.rating;
 };
