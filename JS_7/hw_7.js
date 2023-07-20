@@ -16,7 +16,6 @@ const cars = [
     new Car(2021, 'Toyota', 'Camry', 12)
 ];
 
-
 // За допомогою деструктуризації переберіть масив, в який виведіть в консоль інфо про модель і кількість покупок.
 
 const [year, model, name, buy] = cars;
@@ -24,13 +23,17 @@ cars.forEach(({ model, buy }) => {
   console.log(`Кількість продаж моделі ${model} склала ${buy} одиниць`);
 });
 
+
 // - Створіть html з такими елементами і виберіть їх селекторами
-window.onload = function() {
+window.addEventListener('DOMContentLoaded', function() {
     let autoplay = document.querySelector('[autoplay]');
     let elements = document.querySelectorAll('div, p');
     let listItems = document.querySelectorAll('ul.nav > li');
     let listItem = document.querySelectorAll('li:nth-child(2)');
-}
+
+    let arr = [autoplay, elements, listItems, listItem];
+    console.log(arr);
+});
 
 
 // - Створити html документ, в якому є теги header, footer, nav вибрати їх селектором, розмістити в масив, а далі за допомогою forEach змінити їх innerHtml значення ( тут є 2 вирішення по виборці елементів).
