@@ -3,11 +3,15 @@
 document.getElementById('numberEl').addEventListener('input', function(e) {
     const cleaner = this.value.replace(/\s/g, '');
     this.value = cleaner.replace(/\D/g, '');
+    const number = parseInt(this.value, 10);
+    if (number > 25) {
+        this.value = '25';
+    }
 });    
 
 function generateEl() {
         const numberEl = parseInt(document.getElementById('numberEl').value, 10);
-        
+     
 
         const Container = document.getElementById('Container');
         Container.innerHTML = '';
