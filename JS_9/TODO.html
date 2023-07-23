@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW-9_todo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+  <body class="container-fluid" style="max-width: 960px;">
+    <header>
+        <h1 class ="text-center my-5" style="font-family: Open_Sans; font-weight: 600;">My Todo-list</h1>
+        <div class="d-flex justify-content-end">
+            <input id=searchInput type="text" placeholder="Search">
+            <span id="searchIcon" class="search-icon mx-2">🔍</span>
+        </div>
+    </header>
+    <main class="text-center p-5 my-5 bg-primary">
+        <div class="wrap text-bg-light d-flex justify-content-between" style="max-width: 600px; margin: 5px auto; padding: 10px 15px;">
+            <input type="text" id="newTaskInput" placeholder="Додати завдання">
+            <button class="Add btn btn-primary">Add task</button>
+        </div>
+        <div class="generated-block text-bg-light" style="max-width: 600px; margin: 5px auto;">    
+            <ol id="tasksList" class="container my-5">
+            </ol>
+        </div>     
+        <div class="d-flex justify-content-start mt-1">
+            <button class="Submit btn btn-warning border-white ">Save tasks</button>         
+        </div>                      
+    </main> 
+  </body>
+  <script src="todo.js"></script>
+</html>
