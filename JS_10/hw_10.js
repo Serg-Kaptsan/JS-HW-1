@@ -16,15 +16,27 @@ window.onload = function() {
 
 // - Написати функцію яка видаляє всі тексктові символи з стрінга, а отриманні цифрові значення переводить в тип намбер та повертає його clearString("hell5o wor6ld") ======> 56
 
-        let numMatch = (inputStr.match(/\d/g) || []).join('');
+    function clearString (inputStr) {
+        let numMatch = inputStr.match(/\d/g || []);
+        return numMatch ? numMatch.join('') : '';
+    }
+        let numMatch = clearString(inputStr);
+
+    // let numMatch = (inputStr.match(/\d/g) || []).join('');
   
     console.log (`Кількість букв у верхньому регістрі: ${result}, ${numMatch ? 'числові значення: ' + numMatch : 'числових значень не знайдено'}`);
 
 
     // - Створити функцію валідації юзернейма, імя може включати літери цифри, тире і нижьнє тире, довжина імя повина бути від 4 до 10 символів.
 
+    function validate (userName) {
+        return (/^[a-zA-Z0-9_-]{4,10}$/).test(userName);
+    }
+
     let userName = prompt("Введіть ім'я:");
-    let validateUsername = (/^[a-zA-Z0-9_-]{4,10}$/).test(userName);
+    let validateUsername = validate (userName);
+    
+    // let validateUsername = (/^[a-zA-Z0-9_-]{4,10}$/).test(userName);
 
     console.log(validateUsername);
 
