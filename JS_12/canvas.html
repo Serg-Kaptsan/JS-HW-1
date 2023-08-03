@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+</head>
+<body>
+    <canvas width="600" height="400" style="border:1px solid black;"></canvas>
+    <button id="moveRight">Move Right</button>
+    <button id="moveTop">Move Top</button>
+
+    <script>
+    // *** створити канвас і кнопку, при натисканні на яку пересувати квадрат в канвасі на 10рх вправо.
+    window.onload = function() {
+        const canvas = document.querySelector("canvas");
+        const context = canvas.getContext("2d");
+        const rightButton = document.querySelector("#moveRight");
+        const topButton = document.querySelector("#moveTop");
+
+         // Стартові координати:   
+        let rectX = 20;
+        let rectY = 380;
+
+        function drawRect(x, y) {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        context.fillStyle = "black";
+        context.fillRect(x, y, 30, 20);
+    }
+
+    function moveRect(offsetX, offsetY) {
+        rectX += offsetX;
+        rectY += offsetY;
+        
+        if (rectX > canvas.width - 30) {
+            rectX = canvas.width - 30;
+        }
+        
+        if (rectY < 0) {
+            rectY = 0;
+        }
+
+        drawRect(rectX, rectY);
+    }
+
+    drawRect(rectX, rectY);
+
+    rightButton.onclick = function() {
+        moveRect(10, 0);
+    };
+
+    topButton.onclick = function() {
+        moveRect(0, -10);
+    };
+}  
+    </script>
+</body>
+</html>
