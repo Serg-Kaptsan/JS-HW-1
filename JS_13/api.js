@@ -61,22 +61,20 @@ window.onload = function(){
 
         criteriaItems.forEach(item => {
             item.addEventListener('click', function(event) {
-                console.log('Criteria item clicked:', event.target);
                 const criteria = event.target.getAttribute('data-criteria');
-                console.log('Selected criteria:', criteria);
                 sortPlanets(criteria);
-                console.log('Sorting planets by:', criteria);
                 criteriaDropdown.classList.remove('show');
             });
         });
         
         function sortPlanets(sortBy) {
+            const planetCards = document.querySelectorAll('.planet-card');
+            const planetCardArray = Array.from(planetCards);            
             const criteriaIndexes = {
                 diameter: 2,
                 orbital_period: 1
             };            
-            const planetCards = document.querySelectorAll('.planet-card');
-            const planetCardArray = Array.from(planetCards);
+
     console.log('Sorting by:', sortBy);
     console.log('planetCardArray before sorting:', planetCardArray);
         
@@ -90,7 +88,8 @@ window.onload = function(){
                 return aValueValue - bValueValue;
             });
     console.log('planetCardArray after sorting:', planetCardArray);
-        
+
+    // Замінюємо поточний порядок відображення карточок на відсортований:
             planetCards.forEach(planetCard => {
                 planetCard.remove();
             });
@@ -109,7 +108,7 @@ window.onload = function(){
 
     searchIcon.onclick = function () {
         const searchKeyword = searchInput.value.toLowerCase();
-    const planetCards = document.querySelectorAll('.planet-card');
+        const planetCards = document.querySelectorAll('.planet-card');
   
         planetCards.forEach(function (serchName) {
         const taskElement = serchName.querySelector('h3');            
@@ -131,5 +130,4 @@ window.onload = function(){
             backCards.style.display = 'block';
         });
     };
-    console.log('Number of criteria items:', criteriaItems.length);
 };
