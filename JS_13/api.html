@@ -20,37 +20,52 @@
             }
             .col{
                 background-color: white;
-                width: 200px;
+                width: 215px;
                 height: 100%;
                 border: 1px solid black;
                 color: black;
                 text-align: start;
                 padding: 15px;
-                padding-bottom: 30px;
                 margin-right: 15px;
                 margin-top: 25px;
-                /* position: relative; */
             }
             .sort{
                 margin-left: 60px;
             }
             .films-button{
-                /* position: absolute;
-                bottom: 5px;
-                right: 10px; */
-                align-self: end; 
+                margin-left: 100px;
+            }
+            p {
+                margin-bottom: 1rem;
+            }
+            h5{
+                margin-top: 1.1rem;
+                margin-bottom: 0.25rem;
+                font-weight: 600;
+            }
+            .film{
+                margin-bottom: 0.25rem;                
             }
         </style>
     <body>
         <header>
             <h1 class ="text-center my-5" style="font-family: Open_Sans; font-size: 50px; font-weight: 600; letter-spacing: 2px;">Planets from the Star Wars universe</h1>
             <div class="search text-end">
-                <input id=searchInput type="text" placeholder="Search">
-                <span id="searchIcon" class="search-icon mx-2">🔍</span>                
+                <input id=searchInput type="text" placeholder="Enter planet name">
+                <span id="searchIcon" class="search-icon mx-2">🔍</span>
+                <span id="resetIcon" class="reset-icon">❌</span>           
             </div>
         </header>
         <main>
-            <button class="sort btn btn-light" style="--bs-btn-padding-y: 0.25rem">Sort by</button>
+            <div class="dropdown">
+                <button class="sort btn btn-light dropdown-toggle" style="--bs-btn-padding-y: 0.25rem" type="button" id="sortButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    Sort by
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="sortButton">
+                    <li><a class="dropdown-item" href="#" data-criteria="diameter">Diameter</a></li>
+                    <li><a class="dropdown-item" href="#" data-criteria="orbital_period">Orbital Period</a></li>
+                </ul>
+            </div>
             <div class="line row row-cols-5">
             </div>
         </main>
