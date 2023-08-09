@@ -1,5 +1,6 @@
 window.onload = function(){
     const planetsContainer = document.querySelector('.line');
+    const planetCards = document.querySelectorAll('.planet-card');
 
     fetch('https://swapi.dev/api/planets/')
         .then(response => response.json())
@@ -68,7 +69,7 @@ window.onload = function(){
         });
         
         function sortPlanets(sortBy) {
-            const planetCards = document.querySelectorAll('.planet-card');
+            // const planetCards = document.querySelectorAll('.planet-card');
             const planetCardArray = Array.from(planetCards);            
             const criteriaIndexes = {
                 diameter: 2,
@@ -108,7 +109,7 @@ window.onload = function(){
 
     searchIcon.onclick = function () {
         const searchKeyword = searchInput.value.toLowerCase();
-        const planetCards = document.querySelectorAll('.planet-card');
+        // const planetCards = document.querySelectorAll('.planet-card');
   
         planetCards.forEach(function (serchName) {
         const taskElement = serchName.querySelector('h3');            
@@ -124,7 +125,7 @@ window.onload = function(){
       
     resetIcon.onclick = function () {
         searchInput.value = '';
-        const planetCards = document.querySelectorAll('.planet-card');
+        // const planetCards = document.querySelectorAll('.planet-card');
 
         planetCards.forEach (function (backCards) {
             backCards.style.display = 'block';
