@@ -19,6 +19,7 @@ createApp({
                 this.orderCheck = !this.orderCheck;
             }
         },
+        
         removeProduct(){
             if(this.orderedCount>0){
                 this.avalaibleCount ++;

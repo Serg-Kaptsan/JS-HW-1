@@ -9,6 +9,7 @@ createApp({
         orderCheck: false
       }  
     },
+    
     methods:{
         addProduct(){
             if(this.avalaibleCount>0){
